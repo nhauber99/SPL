@@ -24,7 +24,7 @@ j.reichhardt@tig.at}
 \maketitle
 
 \begin{abstract}
-With growing complexity of software systems, variability of said has become an increasing problem and managing it is thus a crucial part of the present-day software engineering process. It is particularly vital if either many product versions make use of an existing architecture over a long period of time or if a variety of software systems share a common code base. The focus of this paper is to provide an overview of how variation in software systems is caused, how it influences the development process and how it can be dealt with.
+With the growing complexity of software systems, variability of said has become an increasing problem and managing it is thus a crucial part of the present-day software engineering process. It is particularly vital if either many product versions make use of an existing architecture over a long period of time or if a variety of software systems share a common code base. The focus of this paper is to provide an overview of how variation in software systems is caused, how it influences the development process and how it can be dealt with.
 \end{abstract}
 
 \section{Introduction}
@@ -35,7 +35,17 @@ We will try to provide a basic introduction how variability is managed in softwa
 (1/2 page) JR
 
 \section{Background and related work}
-In this section the background research which we use to present an overview of the topic.
+As variability has always been a problem in software systems, a lot of research and developement have been put into this topic, in order to advance the subject of managing variability.\\
+
+Managing variability is certainly not a trivial task, as requirements differ vastly when looking at different industries. Therefore several strategies exist for engineering variant-rich systems, each with its own advantages and disadvantages. \cite{b5}
+
+The main direction existing research has progressed is how to model variability \cite{b4}, by attempting to formulate principles of building and maintaining said models. Often by analyzing various existing papers on the topic. Two approaches of how to model variability have gained the most importance: feature modeling and decision modeling. \\
+
+The origin of feature modeling is the feature domain analysis method (FODA), which tries to outline common and variable parts of a system. A lot of work as since been done on this, extending the original notation.\cite{b6}\\
+
+Decision modeling has its earliest documented approach in the Synthesis method. \cite{b6} This defines it as \textit{a set of decisions that are adequate to distinguish among the members of an application engineering product family and to guide adaptation of application
+	engineering work products}. \cite{b7}\\
+
 (1/2 page) NH
 
 \section{Origin of variability}
@@ -67,6 +77,16 @@ Make final remarks about the discussed elements.
 \bibitem{b3} F. Bachmann, L. Bass, "Managing Variability in Software Architectures", Carnegie Mellon University (2001)
 \bibitem{b4} M. Galster, D. Weyns, D. Tofan, M. Bartosz, P. Avgeriou, "Variability in Software Systems—A Systematic Literature Review", IEEE Transactions on Software Engineering (2014)
 \bibitem{b5} T. Berger, J.-P. Steghöfer, T. Ziadi, J. Robin, and J. Martinez, "The state of adoption and the challenges of systematic variability management in industry", Empirical Software Engineering, vol. 25, pp. 1755-1797, 2020
+\bibitem{b6}
+K. Czarnecki, P. Grünbacher, R. Rabiser, K. Schmid., and A.
+Wąsowski, “Cool features and tough decisions: a comparison of
+variability modeling approaches,” Proc. of the \textit{Sixth international
+workshop on variability modeling of software-intensive systems
+(VaMoS '12)}, ACM, Jan 2012, pp. 173-182.
+\bibitem{b7}
+Software Productivity Consortium Services Corporation,
+Technical Report SPC-92019-CMC. \textit{Reuse-Driven Software
+Processes Guidebook}, Version 02.00.03, 1993.
 \end{thebibliography}
 
 \end{document}

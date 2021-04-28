@@ -29,12 +29,11 @@ With the growing complexity of software systems, variability of said has become 
 
 \section{Introduction}
 Building software systems which can adopt to changes from outside as well as within said system represents a vital goal to build software systems that last. When these goals are achieved the effort and therefore costs are reduced for maintenance, but also for further improvements and extension. \\\\
-Therefore, a lot of companies design their software such as numerous variants exists, which allows customization to meet the requirements which are laid out by customers and stakeholders. One of the most used practices to achieve a variant-rich software system is software product line engineering (SPLE) which uses concept, processes, modeling techniques for features and function, design patters and respective tools to support the process.[5]\\\\
+Therefore, a lot of companies design their software such as numerous variants exists, which allows customization to meet the requirements which are laid out by customers and stakeholders. One of the most used practices to achieve a variant-rich software system is software product line engineering (SPLE) which uses concept, processes, modeling techniques for features and function, design patters and respective tools to support the process.\cite{b5}\\\\
 If one wants to design a system which is prepared for change, the focus should lie on developing components which have loose coupling and strong cohesion. So a module solves one simple task and is as independent as it can be. This leads to the least amount of unwanted side effects in other modules if one module is confronted with unpredicted variability.\\\\
 We will try to provide a basic introduction how variability is managed in software systems by collection information from other studies which describe the key aspects of this vast field of research. In the first section we are providing some base knowledge acquired previous studies. After that we will lay out how one can identify the various sources of variability in software systems. After that we will bring up techniques and processes which have the purpose of modeling the variation in a software system. Last but not least we will discuss some of the big tasks which have to be addressed and boil down the described aspects in this paper to a conclussion.
-(1/2 page) JR
 
-\section{Background and related work}
+\section{Background and related work (1/2 page) NH}
 As variability has always been a problem in software systems, a lot of research and developement have been put into this topic, in order to advance the subject of managing variability.\\
 
 Managing variability is certainly not a trivial task, as requirements differ vastly when looking at different industries. Therefore several strategies exist for engineering variant-rich systems, each with its own advantages and disadvantages. \cite{b5}
@@ -46,15 +45,17 @@ The origin of feature modeling is the feature domain analysis method (FODA), whi
 Decision modeling has its earliest documented approach in the Synthesis method. \cite{b6} This defines it as \textit{a set of decisions that are adequate to distinguish among the members of an application engineering product family and to guide adaptation of application
 	engineering work products}. \cite{b7}\\
 
-(1/2 page) NH
-
-\section{Origin of variability}
+\section{Origin of variability (1/2 page) NH}
 We introduce why there is variability in the modern software engineering process. So that the reader knows how the problems arrise to have a baseline for presenting solutions for said problems.
-(1/2 page) NH
 
-\section{Variability modeling}
-The question we want to answer in this section how one can model/describe the changes the software architecture is exposed to and how the dependencies and flexibility can be put into a defined state. 
-(1 page) JR
+\section{Variability modeling (1 page) JR}
+As mentioned there are two main approaches for managing variability. For each of which we will discuss the advantages and disantages and create a broad overview over the different modeling approaches.\\\\
+\textbf{Feature modeling}\\
+Features in the context of feature modeling are behaviours, characetristics or functionalities which are observable by the user of the software system. They can be used to define commonalities and differences between systems and their variants, as well as determine mandatory, optional or alternative aspects of them\cite{b8}. A broadly used approach of displaying features and their relations are hierarchically structured diagrams which are called features diagrams.\\\\
+A big advantage of feature models, especially in the shape of feature diagrams, is a possible communication enhancement between stakeholders. This can be achieved by providing a overview of all functionalities which are offered to the user by the system. Due to the nature of the model regarding structure and due to the fact that it displays if and which planned features are already provided by another system or system family, this may improve the cost and time estimation for developing the software system. 
+\\\\
+\textbf{Decision modeling}\\
+asdfasdf
 
 \section{Variability patterns}
 Sums up the typical patterns how variability can be introduced.
@@ -79,14 +80,16 @@ Make final remarks about the discussed elements.
 \bibitem{b5} T. Berger, J.-P. Steghöfer, T. Ziadi, J. Robin, and J. Martinez, "The state of adoption and the challenges of systematic variability management in industry", Empirical Software Engineering, vol. 25, pp. 1755-1797, 2020
 \bibitem{b6}
 K. Czarnecki, P. Grünbacher, R. Rabiser, K. Schmid., and A.
-Wąsowski, “Cool features and tough decisions: a comparison of
+Wasowski, “Cool features and tough decisions: a comparison of
 variability modeling approaches,” Proc. of the \textit{Sixth international
 workshop on variability modeling of software-intensive systems
 (VaMoS '12)}, ACM, Jan 2012, pp. 173-182.
 \bibitem{b7}
 Software Productivity Consortium Services Corporation,
 Technical Report SPC-92019-CMC. \textit{Reuse-Driven Software
-Processes Guidebook}, Version 02.00.03, 1993.
+Processes Guidebook}, Version 02.00.03, 1993.
+\bibitem{b8} K. C. Kang, S. Cohen, J. Hess, W. Novak, and S. Peterson,	 "Feature oriented domain analysis (FODA) feasibility study", Technical Report CMU/SEI-90-TR-21, Software Engineering Institute, Carnegie Mellon University, Pittburgh, PA, USA, 1990
+
 \end{thebibliography}
 
 \end{document}

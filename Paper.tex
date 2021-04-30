@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage{svg}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -55,8 +56,8 @@ Features in the context of feature modeling are behaviours, characteristics or f
 A big advantage of feature models, especially in the shape of feature diagrams, is a possible communication enhancement between stakeholders. This can be achieved by providing a overview of all functionalities which are offered to the user by the system. Due to the nature of the model regarding structure and due to the fact that it displays if and which planned features are already provided by another system or system family, this may improve the cost and time estimation for developing the software system. \\\\
 The essence of feature modeling is the splitting of features into distinct objects which have a certain relation to each other. There are several types of features mentioned in \cite{b8}, named \textit{mandatory, optional and alternative features}. Generally speaking common attributes of systems are described by mandatory features, while alternative or optional features define the variability in feature models.\cite{b9}\\\\ 
 If a feature is mandatory it has to be selected if its parent feature is selected, the type of the parent feature does not matter. A optional feature can be selected freely but there may be constraints from composition rules (e.g. a feature can only be choosen as part of a feature sets). Alternative features are can be pictured as a choice box, so one can choose \textit{one} item from a feature set.\\\\
-This is the approach which is used in the original FODA paper, which was extended with the introduction of cardinalities for alternative features. \cite{b10} This expansion grants the ability to create minimum and maximum constraints for choosing alternative features from a feature set, which helps with creating complex models.
- 
+This is the approach which is used in the original FODA paper, which was extended with the introduction of cardinalities for alternative features. \cite{b10} This expansion grants the ability to create minimum and maximum constraints for choosing alternative features from a feature set, which helps with creating complex models.\\\\
+In Fig. 1, one can see a small feature diagram of a car, it consists of one root node, that describes the domain we are modeling, in this case the car. The previous elaborated mandatory features are the engine and seats. Furthermore there is the option to install a cruise control and the option for a turbocharger these features are completely independet and optional. Last but not least one can choose between normal leather seats or alcantara ones but not both. Which this simplified model of a car we have all three types of features modeled
 
 \textbf{Decision modeling}\\
 asdfasdf

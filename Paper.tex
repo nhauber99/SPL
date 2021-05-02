@@ -81,20 +81,6 @@ Same as feature modeling, decision modeling has been expanded over time to enabl
 
 
 \section{Variability patterns}
-<<<<<<< HEAD
-Sums up the typical patterns how variability can be introduced.
-(1/2 page, maybe merge with section above) NH
-
-\section{???Variability planning???}
-Gives an overview of how someone can plan for varability and how to manage it.
-
-\section{Discussion/Challenges (1/4 page) JR}
-The research field of variability had a increasing trend of published paper per year from 2000 until 2008. After that it stabilized between 25-30 new research paper per year from 2008 until 2011. One explanation of this rise in interest in the scientific community could be that the usage of variability was becoming more broadly in dynamic systems. \cite{b4}\\\\
-Another aspect is that feature modeling is in its core a simple concept. Even though its impact in the industry is pretty big considering it is the most popular concept for variability modeling in software systesm until today.\cite{b9} One can say that because it is such a simple concept and due to the big amount of research in this field we understand the subject pretty well by now.\\\\
-The currently existing methods also have their limitations. It is difficult to guarantee correctness and consistency, authors have to urge for verification and consistency checking. Performance overheads, runtime upgradability and the lack of support regarding security needs are some areas where the described methods are limited. Sometimes the handling of variability can create poor user-friendliness and therefore decrease usebility of a system. \cite{b4}\\\\
-There are ways to decrease the negative impact of these aspects e.g. correctness and consistency can be checked by various methods such as modeling guidelines customized for specific needs, together with a reviewing process where changes to the model are checked by another person to ensure the quality of the metioned parameters.
-
-=======
 Variability can be introduced into a system via different mechanisms. These mechanisms strive to bind a given system to one out of many alternatives at different binding times. Binding times describe when exactly these mechanisms stop deffering the decision and make the choice for any of the variations, as illustrated in Figure 1.\cite{b2}
 
 \begin{figure}[h!]
@@ -118,10 +104,12 @@ Any mechanism to bind to none, one or many different variants tend to fall into 
 	\item \textit{Multiple Coexisting Entities.} Similar to the variant entity but with the exception that multiple variants can be used.\\
 \end{itemize}
 These categories tend to be the same for the different binding times, but of course vary greatly in their implementation. While an optional entity during compilation may only be influenced by a compiler flag, it might be a whole plugin from a third party vendor when adapting a given runtime environment. An in depth analysis of these mechanisms can be found in \cite{b2}.
-\section{Discussion/Challenges}
-Discuss why the variability of systems is hard to tackle and why it is not always successful.
-(1/4 page) JR
->>>>>>> 07d0f30ddc607b1a81093bc76ccea31ca118cca3
+
+\section{Discussion/Challenges (1/4 page) JR}
+The research field of variability had a increasing trend of published paper per year from 2000 until 2008. After that it stabilized between 25-30 new research paper per year from 2008 until 2011. One explanation of this rise in interest in the scientific community could be that the usage of variability was becoming more broadly in dynamic systems. \cite{b4}\\\\
+Another aspect is that feature modeling is in its core a simple concept. Even though its impact in the industry is pretty big considering it is the most popular concept for variability modeling in software systesm until today.\cite{b9} One can say that because it is such a simple concept and due to the big amount of research in this field we understand the subject pretty well by now.\\\\
+The currently existing methods also have their limitations. It is difficult to guarantee correctness and consistency, authors have to urge for verification and consistency checking. Performance overheads, runtime upgradability and the lack of support regarding security needs are some areas where the described methods are limited. Sometimes the handling of variability can create poor user-friendliness and therefore decrease usebility of a system. \cite{b4}\\\\
+There are ways to decrease the negative impact of these aspects e.g. correctness and consistency can be checked by various methods such as modeling guidelines customized for specific needs, together with a reviewing process where changes to the model are checked by another person to ensure the quality of the metioned parameters.
 
 \section{Conclussion (1/4 page) NH}
 In this document we have given a short introduction to the origin of variability, how to model it and what patterns exist as well as look over related work to these topics. \\

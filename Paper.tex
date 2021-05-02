@@ -29,10 +29,13 @@ With the growing complexity of software systems, variability of said has become 
 \end{abstract}
 
 \section{Introduction}
-Building software systems which can adopt to changes from outside as well as within said system represents a vital goal to build software systems that last. When these goals are achieved the effort and therefore costs are reduced for maintenance, but also for further improvements and extension. \\\\
-Therefore, a lot of companies design their software such as numerous variants exists, which allows customization to meet the requirements which are laid out by customers and stakeholders. One of the most used practices to achieve a variant-rich software system is software product line engineering (SPLE) which uses concept, processes, modeling techniques for features and function, design patters and respective tools to support the process.\cite{b5}\\\\
-If one wants to design a system which is prepared for change, the focus should lie on developing components which have loose coupling and strong cohesion. So a module solves one simple task and is as independent as it can be. This leads to the least amount of unwanted side effects in other modules if one module is confronted with unpredicted variability.\\\\
-We will try to provide a basic introduction how variability is managed in software systems by collection information from other studies which describe the key aspects of this vast field of research. In the first section we are providing some base knowledge acquired previous studies. After that we will lay out how one can identify the various sources of variability in software systems. After that we will bring up techniques and processes which have the purpose of modeling the variation in a software system. Last but not least we will discuss some of the big tasks which have to be addressed and boil down the described aspects in this paper to a conclussion.
+Building software systems which can adopt to changes from outside as well as within said system represents a vital goal to build software systems that last. When these goals are achieved the effort and therefore costs are reduced for maintenance, but also for further improvements and extension. \\
+
+Therefore, a lot of companies design their software such as numerous variants exists, which allows customization to meet the requirements which are laid out by customers and stakeholders. One of the most used practices to achieve a variant-rich software system is software product line engineering (SPLE) which uses concept, processes, modeling techniques for features, functions, design patters and respective tools to support the process.\cite{b5}\\
+
+If one wants to design a system which is prepared for change, the focus should lie on developing components which have loose coupling and strong cohesion. Thus a module solves one simple task and is as independent as it can be. This leads to the least amount of unwanted side effects in other modules if one module is confronted with unpredicted variability.\\
+
+We will try to provide a basic introduction of how variability is managed in software systems by collecting information from other studies which describe the key aspects of this vast field of research. In the first section we are providing some base knowledge acquired previous studies. After that we will lay out how one can identify the various sources of variability in software systems. Then we will bring up techniques and processes which have the purpose of modeling the variation in a software system. Last but not least we will discuss some of the big tasks which have to be addressed and conclude the topic.
 
 \section{Background and related work}
 As variability has always been a problem in software systems, a lot of research and developement have been put into this topic, in order to advance the subject of managing variability.\\
@@ -43,7 +46,7 @@ The main direction existing research has progressed is how to model variability 
 
 The origin of feature modeling is the feature domain analysis method (FODA), which tries to outline common and variable parts of a system. A lot of work as since been done on this, extending the original notation.\cite{b6}\\
 
-Decision modeling has its earliest documented approach in the Synthesis method. \cite{b6} This defines it as \textit{a set of decisions that are adequate to distinguish among the members of an application engineering product family and to guide adaptation of application
+Decision modeling has its earliest documented approach in the synthesis method. \cite{b6} This defines it as \textit{a set of decisions that are adequate to distinguish among the members of an application engineering product family and to guide adaptation of application
 	engineering work products}. [7 p. 104]\\
 
 All in all there exists various literature on the different scopes variability management encompasses and we try to capture the main points of several of them in this paper.
@@ -53,28 +56,28 @@ Variability is the ability of software to be changed for specific context. That 
 There are two main cases where one needs to capture different alternatives within an architecture:\\
 \begin{enumerate}
 	\item At the time of design there may exist various alternatives and if a decision cannot be made yet because of lack of information, it will be deferred. Therefore one must design the system to be able to handle all viable alternatives.\\
-	\item There already exists an product line which contains several different alternatives for given parts of software, which can be chosen depending on the needs of each individual customer.\\
+	\item There already exists a product line which contains several different alternatives for given parts of the software, which can be chosen depending on the needs of each individual customer.\\
 \end{enumerate}
 While these situations differ greatly in reality, in the context of variability management they are really the same. That is, before a decision is made on which alternative is going to be chosen, one does not know the outcome and needs to be able to handle all possible ones.\cite{b3}\\
 
 There are also several reasons why such variations have to exist in the first place \cite{b3}:
 \begin{enumerate}
-	\item \textit{Variation in function.} Not every product supports the same functions. Take as example a modern smartphone, some might support fingerprint authentication, some might support facial recognition authentication and some might support none of those.\\
-	\item \textit{Variation in data.} Products might vary in the definitions of data structures. For example a software managing planned repairs of industrial machines might need store additional information for some companies like an SAP Id in case these planned repairs are also concurrently managed in SAP, while some other companies might not need that information.\\
+	\item \textit{Variation in function.} Not every product supports the same functions. Take as example a modern smartphone, some might support fingerprint authentication, some might support facial recognition authentication and some support neither.\\
+	\item \textit{Variation in data.} Products might vary in the definitions of data structures. For example a software managing planned repairs of industrial machines might need store additional information for some companies like an SAP id in case these planned repairs are also concurrently managed in SAP, while some other companies might not need that information.\\
 	\item \textit{Variation in technology.} The technology different products run on may vary. Some software systems for example need to run on Linux while others need to support Windows. Or for some a simple MySQL database might suffice while others need the SQL Server Enterprise edition because the amount of data might vary significantly.\\
 	\item \textit{Variation in environment.} The environment software exists in might vary. Meaning also the way in which it interacts with its environment. \\
 \end{enumerate}
 These, at least, are the four most common origins of variation. Of course some more do exist, but these are beyond the scope of this document.\\
 \section{Variability modeling}
-As mentioned there are two main approaches for managing variability. For each of which we will discuss the advantages and disadvantages and create a broad overview over the different modeling approaches.\\\\
+As mentioned, there are two main approaches for managing variability. For each of which we will discuss the advantages and disadvantages and create a broad overview over the different modeling approaches.\\\\\\
 \textbf{Feature modeling}\\
-Features in the context of feature modeling are behaviours, characteristics or functionalities which are observable by the user of the software system. They can be used to define commonalities and differences between systems and their variants, as well as determine mandatory, optional or alternative aspects of them\cite{b8}. A broadly used approach of displaying features and their relations is hierarchically structured diagram which is called a features diagrams.\\
+Features in the context of feature modeling are behaviours, characteristics or functionalities which are observable by the user of the software system. They can be used to define commonalities and differences between systems and their variants, as well as determine mandatory, optional or alternative aspects of them\cite{b8}. A broadly used approach of displaying features and their relations is a hierarchically structured diagram which is called a features diagram.\\
 
-A big advantage of feature models, especially in the shape of feature diagrams, is a possible communication enhancement between stakeholders. This can be achieved by providing a overview of all functionalities which are offered to the user by the system. Due to the nature of the model regarding structure and due to the fact that it displays if and which planned features are already provided by another system or system family, this may improve the cost and time estimation for developing the software system. \\
+A big advantage of feature models, especially in the shape of feature diagrams, is a possible communication enhancement between stakeholders. This can be achieved by providing an overview of all functionalities which are offered to the user by the system. Due to the nature of the structure of the model and due to the fact that it displays if and which planned features are already provided by another system or system family, this may improve the cost and time estimation for developing the software system. \\
 
 The essence of feature modeling is the splitting of features into distinct objects which have a certain relation to each other. There are several types of features mentioned in \cite{b8}, named \textit{mandatory, optional and alternative features}. Generally speaking common attributes of systems are described by mandatory features, while alternative or optional features define the variability in feature models.\cite{b9}\\
 
-If a feature is mandatory it has to be selected if its parent feature is selected, the type of the parent feature does not matter. A optional feature can be selected freely but there may be constraints from composition rules (e.g. a feature can only be choosen as part of a feature sets). Alternative features are can be pictured as a choice box, so one can choose \textit{one} item from a feature set.\\
+If a feature is mandatory it has to be selected if its parent feature is selected, the type of the parent feature does not matter. A optional feature can be selected freely but there may be constraints from composition rules (e.g. a feature can only be choosen as part of a feature sets). Alternative features are can be pictured as a choice box, exactly \textit{one} item must be chosen from a feature set.\\
 
 This is the approach which is used in the original FODA paper, which was extended with the introduction of cardinalities for alternative features.\cite{b10} This expansion grants the ability to create minimum and maximum constraints for choosing alternative features from a feature set, which helps with creating complex models.
 
@@ -82,11 +85,13 @@ This is the approach which is used in the original FODA paper, which was extende
 	\includegraphics[width=\columnwidth]{feature_model}
 	\caption{Simplified feature model of a car}
 \end{figure}
-In Fig. 1, one can see a small feature diagram of a car, it consists of one root node, that describes the domain we are modeling, in this case the car. The previous elaborated mandatory features are the engine and seats. Furthermore there is the option to install a cruise control and the option for a turbocharger these features are completely independet and optional. Last but not least one can choose between normal leather seats or alcantara ones but not both. Which this simplified model of a car we have all three types of features modeled.\\\\
+In Fig. 1, one can see a small feature diagram of a car, it consists of one root node, that describes the domain we are modeling, in this case the car. The previous elaborated mandatory features are the engine and seats. Furthermore there is the option to install a cruise control and the option for a turbocharger. These features are completely independet and optional. Last but not least one can choose between normal leather seats or alcantara ones but not both. In this simplified model of a car we have all three types of features modeled.\\\\
 \textbf{Decision modeling}\\
-In decision modeling the variability is described with decision instead of features. A variable feature in feature modeling is equal to a decision and vice versa. Contrary to feature modeling decision modeling is unable to describe the commonalities of systems.\\\\
-Decision models can be represented in different ways, broadly used approaches are flat lists or tables of decisions which also includes their dependicies. In decision modeling hierarchy is a secondary aspect, because there are no uniform rules to describe hierarchy. \cite{b6}\\\\
-Same as feature modeling, decision modeling has been expanded over time to enable the application coverage of DM be almost the same as FM.\cite{b6}\\
+In decision modeling the variability is described with decisions instead of features. A variable feature in feature modeling is equal to a decision and vice versa. Contrary to feature modeling, decision modeling is unable to describe the commonalities of systems.\\
+
+Decision models can be represented in different ways, broadly used approaches are flat lists or tables of decisions which also includes their dependencies. In decision modeling hierarchy is a secondary aspect, because there are no uniform rules to describe hierarchy. \cite{b6}\\
+
+Same as feature modeling, decision modeling has been expanded over time to enable the application coverage of DM to be almost the same as FM.\cite{b6}\\
 
 \section{Variability patterns}
 Variability can be introduced into a system via different mechanisms. These mechanisms strive to bind a given system to one out of many alternatives at different binding times. Binding times describe when exactly these mechanisms stop deffering the decision and make the choice for any of the variations, as illustrated in Figure 2.\cite{b2}
@@ -102,7 +107,7 @@ Further explanation of these binding times can be found in the subsequent paragr
 	\item \textit{Product architecture derivation.} The architecture of the product already binds to a variation. This is the lowest binding time and will influence all subsequent steps.\\
 	\item \textit{Compilation.} When the source code is compiled there exist several options to bind to a variation by adjusting constants, macros or compiler directives.\\
 	\item \textit{Linking.} This option does not exist for any technology, but for many programming languages the linking process can be manually changed. For example by switching the DLL of a module.\\
-	\item \textit{Startup} A simple option to bind variants to the system is by configuration files, that influence the features a software system exhibits.\\
+	\item \textit{Startup} A simple option to bind variants to the system is by configuration files that influence the features a software system exhibits.\\
 	\item \textit{Adaptation to runtime environment} This typically refers to plugins of a software, which can add variation to a system and can either be provided by the original developer or even third party vendors. \\
 \end{itemize}
 Any mechanism to bind to none, one or many different variants tend to fall into different categories presented by \cite{b2} and \cite{b3}, and also have parallels to the feature types presented in the previous section:\\
@@ -114,9 +119,9 @@ Any mechanism to bind to none, one or many different variants tend to fall into 
 These categories tend to be the same for the different binding times, but of course vary greatly in their implementation. While an optional entity during compilation may only be influenced by a compiler flag, it might be a whole plugin from a third party vendor when adapting a given runtime environment. An in depth analysis of these mechanisms can be found in \cite{b2}.
 
 \section{Discussion/Challenges}
-The research field of variability had a increasing trend of published paper per year from 2000 until 2008. After that it stabilized between 25-30 new research paper per year from 2008 until 2011. One explanation of this rise in interest in the scientific community could be that the usage of variability was becoming more broadly in dynamic systems. \cite{b4}\\
+The research field of variability had an increasing trend of published paper per year from 2000 until 2008. After that it stabilized between 25-30 new research papers per year from 2008 until 2011. One explanation of this rise in interest in the scientific community could be that the usage of variability was becoming more broadly used in dynamic systems. \cite{b4}\\
 
-Another aspect is that feature modeling is in its core a simple concept. Even though its impact in the industry is pretty big considering it is the most popular concept for variability modeling in software system until today.\cite{b9} One can say that because it is such a simple concept and due to the big amount of research in this field we understand the subject pretty well by now.\\
+Another aspect is that feature modeling is in its core a simple concept. Even though its impact on the industry is enormous considering it is the most popular concept for variability modeling in software system as of now.\cite{b9} Due to the big amount of research having been done in this field we understand the subject reasonably well by now.\\
 
 As mentioned in \cite{b4} the currently existing methods also have their limitations. 
 \begin{itemize}
@@ -124,17 +129,17 @@ As mentioned in \cite{b4} the currently existing methods also have their limitat
 \item \textit{Performance overheads} are difficult to model.\\
 \item \textit{Runtime upgradability} and the process of switching features is sometimes necessary.\\
 \item \textit{Lack of support for security needs} can be a factor whichs limits the use of feature modeling.\\
-\item \textit{Poor user-friendliness} can be introduced by poor handling of variability, which decreases the usebility of a system. As an example if you \\
+\item \textit{Poor user-friendliness} can be introduced by poor handling of variability, which decreases the usability of a system.\\
 \end{itemize}
 
-There are ways to decrease the negative impact of these aspects e.g. correctness and consistency can be checked by various methods such as modeling guidelines customized for specific needs, together with a reviewing process where changes to the model are checked by another person to ensure the quality of the metioned parameters.\\
+There are ways to decrease the negative impact of these aspects e.g. correctness and consistency can be checked by various methods such as modeling guidelines customized for specific needs, together with a reviewing process where changes to the model are checked by another person to ensure the quality of the mentioned parameters.\\
 
 It should also be noted most of the studies in the area of FM are including some sort of tool to support the process. Only a few don't mention any form of software support.\\
 
 \section{Conclussion}
-In this document we have given a short introduction to the origin of variability, how to model it and what patterns exist as well as look over related work to these topics. \\
+In this document we have given a short introduction to the origin of variability, how to model it and what patterns exist as well as look over work related to these topics. \\
 
-This information is vital to being able to manage variability, it does however, only glance over the different subjects and only provides a theoretical basis. Practical use also depends on supporting software, which widely exists especially for the task of variability modelling, as well as practical knowledge in the field, which also aids in gaining an in depth understanding of managing variability.\\
+This information is vital for being able to manage variability, it does however, only glance over the different subjects and merely provides a theoretical basis. Practical use also depends on supporting software, which widely exists especially for the task of variability modelling, as well as practical knowledge in the field, which also aids in gaining an in depth understanding of managing variability.\\
 
 For further information we refer the reader to the references, especially \cite{b2}, which gives a more in depth overview, and \cite{b6}, which compares different approaches to variability modelling.
 \newpage

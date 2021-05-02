@@ -44,11 +44,27 @@ The main direction existing research has progressed is how to model variability 
 The origin of feature modeling is the feature domain analysis method (FODA), which tries to outline common and variable parts of a system. A lot of work as since been done on this, extending the original notation.\cite{b6}\\
 
 Decision modeling has its earliest documented approach in the Synthesis method. \cite{b6} This defines it as \textit{a set of decisions that are adequate to distinguish among the members of an application engineering product family and to guide adaptation of application
-	engineering work products}. \cite{b7}\\
+	engineering work products}. [7 p. 104]\\
+
+All in all there exists various literature on the different scopes variability management encompasses and we try to capture the main points of several of them in this paper.
 
 \section{Origin of variability (1/2 page) NH}
-We introduce why there is variability in the modern software engineering process. So that the reader knows how the problems arrise to have a baseline for presenting solutions for said problems.
+Variability is the ability of software to be changed for specific context. That encompasses extension, customization and reconfiguration. It thus defines the parts of the software that remain variable and are not fully specified yet. \cite{b4}\\\\
+There are two main cases where one needs to capture different alternatives within an architecture:\\
+\begin{enumerate}
+	\item At the time of design there may exist various alternatives and if a decision cannot be made yet because of lack of information, it will be deferred. Therefore one must design the system to be able to handle all viable alternatives.\\
+	\item There already exists an product line which contains several different alternatives for given parts of software, which can be chosen depending on the needs of each individual customer.\\
+\end{enumerate}
+While these situations differ greatly in reality, in the context of variability management they are really the same. That is, before a decision is made on which alternative is going to be chosen, one does not know the outcome and needs to be able to handle all possible ones.\cite{b3}\\
 
+There are also several reasons why such variations have to exist in the first place \cite{b3}:
+\begin{enumerate}
+	\item \textit{Variation in function.} Not every product supports the same functions. Take as example a modern smartphone, some might support fingerprint authentication, some might support facial recognition authentication and some might support none of those.\\
+	\item \textit{Variation in data.} Products might vary in the definitions of data structures. For example a software managing planned repairs of industrial machines might need store additional information for some companies like an SAP Id in case these planned repairs are also concurrently managed in SAP, while some other companies might not need that information.\\
+	\item \textit{Variation in technology.} The technology different products run on may vary. Some software systems for example need to run on Linux while others need to support Windows. Or for some a simple MySQL database might suffice while others need the SQL Server Enterprise edition because the amount of data might vary significantly.\\
+	\item \textit{Variation in environment.} The environment software exists in might vary. Meaning also the way in which it interacts with its environment. \\
+\end{enumerate}
+These, at least, are the four most common origins of variation. Of course some more do exist, but these are beyond the scope of this document.\\
 \section{Variability modeling (1 page) JR}
 As mentioned there are two main approaches for managing variability. For each of which we will discuss the advantages and disadvantages and create a broad overview over the different modeling approaches.\\\\
 \textbf{Feature modeling}\\
@@ -65,6 +81,7 @@ Same as feature modeling, decision modeling has been expanded over time to enabl
 
 
 \section{Variability patterns}
+<<<<<<< HEAD
 Sums up the typical patterns how variability can be introduced.
 (1/2 page, maybe merge with section above) NH
 
@@ -77,10 +94,42 @@ Another aspect is that feature modeling is in its core a simple concept. Even th
 The currently existing methods also have their limitations. It is difficult to guarantee correctness and consistency, authors have to urge for verification and consistency checking. Performance overheads, runtime upgradability and the lack of support regarding security needs are some areas where the described methods are limited. Sometimes the handling of variability can create poor user-friendliness and therefore decrease usebility of a system. \cite{b4}\\\\
 There are ways to decrease the negative impact of these aspects e.g. correctness and consistency can be checked by various methods such as modeling guidelines customized for specific needs, together with a reviewing process where changes to the model are checked by another person to ensure the quality of the metioned parameters.
 
+=======
+Variability can be introduced into a system via different mechanisms. These mechanisms strive to bind a given system to one out of many alternatives at different binding times. Binding times describe when exactly these mechanisms stop deffering the decision and make the choice for any of the variations, as illustrated in Figure 1.\cite{b2}
 
-\section{Conclussion}
-Make final remarks about the discussed elements.
-(1/4 page) NH
+\begin{figure}[h!]
+	\includegraphics[width=\columnwidth]{binding_times}
+	\caption{Binding Times \cite{b2}}
+\end{figure}
+
+
+Further explanation of these binding times can be found in the subsequent paragraphs:\\
+\begin{itemize}
+	\item \textit{Product architecture derivation.} The architecture of the product already binds to a variation. This is the lowest binding time and will influence all subsequent steps.\\
+	\item \textit{Compilation.} When the source code is compiled there exist several options to bind to a variation by adjusting constants, macros or compiler directives.\\
+	\item \textit{Linking.} This option does not exist for any technology, but for many programming languages the linking process can be manually changed. For example by switching the DLL of a module.\\
+	\item \textit{Startup} A simple option to bind variants to the system is by configuration files, that influence the features a software system exhibits.\\
+	\item \textit{Adaptation to runtime environment} This typically refers to plugins of a software, which can add variation to a system and can either be provided by the original developer or even third party vendors. \\
+\end{itemize}
+Any mechanism to bind to none, one or many different variants tend to fall into different categories presented by \cite{b2} and \cite{b3}, and also have parallels to the feature types presented in the previous section:\\
+\begin{itemize}
+	\item \textit{Variant Entity.} There exist several options but only one may be bound to at any given time.\\
+	\item \textit{Optional Entity.} As the name suggests, an optional entity may or may not be included in the system.\\
+	\item \textit{Multiple Coexisting Entities.} Similar to the variant entity but with the exception that multiple variants can be used.\\
+\end{itemize}
+These categories tend to be the same for the different binding times, but of course vary greatly in their implementation. While an optional entity during compilation may only be influenced by a compiler flag, it might be a whole plugin from a third party vendor when adapting a given runtime environment. An in depth analysis of these mechanisms can be found in \cite{b2}.
+\section{Discussion/Challenges}
+Discuss why the variability of systems is hard to tackle and why it is not always successful.
+(1/4 page) JR
+>>>>>>> 07d0f30ddc607b1a81093bc76ccea31ca118cca3
+
+\section{Conclussion (1/4 page) NH}
+In this document we have given a short introduction to the origin of variability, how to model it and what patterns exist as well as look over related work to these topics. \\
+
+This information is vital to being able to manage variability, it does however, only glance over the different subjects and only provides a theoretical basis. Practical use also depends on supporting software, which widely exists especially for the task of variability modelling, as well as practical knowledge in the field, which also aids in gaining an in depth understanding of managing variability.\\
+
+For further information we refer the reader to the references, especially \cite{b2}, which gives a more in depth overview, and \cite{b6}, which compares different approaches to variability modelling.
+\newpage
 
 \begin{thebibliography}{00}
 \bibitem{b1} S. Apel, D. Batory, C. Kästner and G. Saake, "Software Product Lines. In: Feature-Oriented Software Product Lines", Berlin Heidelberg, Springer (2013)

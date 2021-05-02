@@ -86,20 +86,33 @@ Variability can be introduced into a system via different mechanisms. These mech
 	\caption{Binding Times \cite{b2}}
 \end{figure}
 
+
 Further explanation of these binding times can be found in the subsequent paragraphs:\\
 \begin{itemize}
-	\item \textit{Product Architecture Derivation.}
+	\item \textit{Product architecture derivation.} The architecture of the product already binds to a variation. This is the lowest binding time and will influence all subsequent steps.\\
+	\item \textit{Compilation.} When the source code is compiled there exist several options to bind to a variation by adjusting constants, macros or compiler directives.\\
+	\item \textit{Linking.} This option does not exist for any technology, but for many programming languages the linking process can be manually changed. For example by switching the DLL of a module.\\
+	\item \textit{Startup} A simple option to bind variants to the system is by configuration files, that influence the features a software system exhibits.\\
+	\item \textit{Adaptation to runtime environment} This typically refers to plugins of a software, which can add variation to a system and can either be provided by the original developer or even third party vendors. \\
 \end{itemize}
-\section{???Variability planning???}
-Gives an overview of how someone can plan for varability and how to manage it.
-
+Any mechanism to bind to none, one or many different variants tend to fall into different categories presented by \cite{b2} and \cite{b3}, and also have parallels to the feature types presented in the previous section:\\
+\begin{itemize}
+	\item \textit{Variant Entity.} There exist several options but only one may be bound to at any given time.\\
+	\item \textit{Optional Entity.} As the name suggests, an optional entity may or may not be included in the system.\\
+	\item \textit{Multiple Coexisting Entities.} Similar to the variant entity but with the exception that multiple variants can be used.\\
+\end{itemize}
+These categories tend to be the same for the different binding times, but of course vary greatly in their implementation. While an optional entity during compilation may only be influenced by a compiler flag, it might be a whole plugin from a third party vendor when adapting a given runtime environment. An in depth analysis of these mechanisms can be found in \cite{b2}.
 \section{Discussion/Challenges}
 Discuss why the variability of systems is hard to tackle and why it is not always successful.
 (1/4 page) JR
 
-\section{Conclussion}
-Make final remarks about the discussed elements.
-(1/4 page) NH
+\section{Conclussion (1/4 page) NH}
+In this document we have given a short introduction to the origin of variability, how to model it and what patterns exist as well as look over related work to these topics. \\
+
+This information is vital to being able to manage variability, it does however, only glance over the different subjects and only provides a theoretical basis. Practical use also depends on supporting software, which widely exists especially for the task of variability modelling, as well as practical knowledge in the field, which also aids in gaining an in depth understanding of managing variability.\\
+
+For further information we refer the reader to the references, especially \cite{b2}, which gives a more in depth overview, and \cite{b6}, which compares different approaches to variability modelling.
+\newpage
 
 \begin{thebibliography}{00}
 \bibitem{b1} S. Apel, D. Batory, C. Kästner and G. Saake, "Software Product Lines. In: Feature-Oriented Software Product Lines", Berlin Heidelberg, Springer (2013)

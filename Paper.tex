@@ -44,11 +44,27 @@ The main direction existing research has progressed is how to model variability 
 The origin of feature modeling is the feature domain analysis method (FODA), which tries to outline common and variable parts of a system. A lot of work as since been done on this, extending the original notation.\cite{b6}\\
 
 Decision modeling has its earliest documented approach in the Synthesis method. \cite{b6} This defines it as \textit{a set of decisions that are adequate to distinguish among the members of an application engineering product family and to guide adaptation of application
-	engineering work products}. \cite{b7}\\
+	engineering work products}. [7 p. 104]\\
+
+All in all there exists various literature on the different scopes variability management encompasses and we try to capture the main points of several of them in this paper.
 
 \section{Origin of variability (1/2 page) NH}
-We introduce why there is variability in the modern software engineering process. So that the reader knows how the problems arrise to have a baseline for presenting solutions for said problems.
+Variability is the ability of software to be changed for specific context. That encompasses extension, customization and reconfiguration. It thus defines the parts of the software that remain variable and are not fully specified yet. \cite{b4}\\\\
+There are two main cases where one needs to capture different alternatives within an architecture:\\
+\begin{enumerate}
+	\item At the time of design there may exist various alternatives and if a decision cannot be made yet because of lack of information, it will be deferred. Therefore one must design the system to be able to handle all viable alternatives.\\
+	\item There already exists an product line which contains several different alternatives for given parts of software, which can be chosen depending on the needs of each individual customer.\\
+\end{enumerate}
+While these situations differ greatly in reality, in the context of variability management they are really the same. That is, before a decision is made on which alternative is going to be chosen, one does not know the outcome and needs to be able to handle all possible ones.\cite{b3}\\
 
+There are also several reasons why such variations have to exist in the first place \cite{b3}:
+\begin{enumerate}
+	\item \textit{Variation in function.} Not every product supports the same functions. Take as example a modern smartphone, some might support fingerprint authentication, some might support facial recognition authentication and some might support none of those.\\
+	\item \textit{Variation in data.} Products might vary in the definitions of data structures. For example a software managing planned repairs of industrial machines might need store additional information for some companies like an SAP Id in case these planned repairs are also concurrently managed in SAP, while some other companies might not need that information.\\
+	\item \textit{Variation in technology.} The technology different products run on may vary. Some software systems for example need to run on Linux while others need to support Windows. Or for some a simple MySQL database might suffice while others need the SQL Server Enterprise edition because the amount of data might vary significantly.\\
+	\item \textit{Variation in environment.} The environment software exists in might vary. Meaning also the way in which it interacts with its environment. \\
+\end{enumerate}
+These, at least, are the four most common origins of variation. Of course some more do exist, but these are beyond the scope of this document.\\
 \section{Variability modeling (1 page) JR}
 As mentioned there are two main approaches for managing variability. For each of which we will discuss the advantages and disadvantages and create a broad overview over the different modeling approaches.\\\\
 \textbf{Feature modeling}\\
@@ -63,9 +79,17 @@ In Fig. 1, one can see a small feature diagram of a car, it consists of one root
 asdfasdf
 
 \section{Variability patterns}
-Sums up the typical patterns how variability can be introduced.
-(1/2 page, maybe merge with section above) NH
+Variability can be introduced into a system via different mechanisms. These mechanisms strive to bind a given system to one out of many alternatives at different binding times. Binding times describe when exactly these mechanisms stop deffering the decision and make the choice for any of the variations, as illustrated in Figure 1.\cite{b2}
 
+\begin{figure}[h!]
+	\includegraphics[width=\columnwidth]{binding_times}
+	\caption{Binding Times \cite{b2}}
+\end{figure}
+
+Further explanation of these binding times can be found in the subsequent paragraphs:\\
+\begin{itemize}
+	\item \textit{Product Architecture Derivation.}
+\end{itemize}
 \section{???Variability planning???}
 Gives an overview of how someone can plan for varability and how to manage it.
 

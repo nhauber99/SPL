@@ -89,9 +89,19 @@ In Fig. 1, one can see a small feature diagram of a car, it consists of one root
 \textbf{Decision modeling}\\
 In decision modeling the variability is described with decisions instead of features. A variable feature in feature modeling is equal to a decision and vice versa. Contrary to feature modeling, decision modeling is unable to describe the commonalities of systems.\\
 
-Decision models can be represented in different ways, broadly used approaches are flat lists or tables of decisions which also includes their dependencies. In decision modeling hierarchy is a secondary aspect, because there are no uniform rules to describe hierarchy. \cite{b6}\\
+Decision models can be represented in different ways, broadly used approaches are flat lists or tables of decisions which also includes their dependencies. In decision modeling hierarchy is a secondary aspect, because there are no uniform rules to describe hierarchy.\cite{b6}\\
 
 Same as feature modeling, decision modeling has been expanded over time to enable the application coverage of DM to be almost the same as FM.\cite{b6}\\
+
+As mentioned in \cite{b11} the  different approaches for decision modeling have some common core model structure. There is an entity which is called decision, which represents a set of all possible choices which are available at a certain point in time.\\
+
+These decision have attributes which can vary from one modeling approach to another. But commonly at least a decision name or identifier are used, while the other atrributes are describing the decision in such a way that the user can understand it. Furthermore the decision has a data type which defines the set of valid choices for decision.\cite{b11}\\
+
+With all of the different approaches it is possible to create dependencies between decisions. There are value contraints for defining dependencies between values, which are supported by most approaches. But here it has to be mentioned that all the approaches use different concepts for value contraints and generally speaking for the management of the dependencies.\cite{b11}\\ 
+
+Some of them are using contraints, similar to the approach used in feature modeling. Another approach for modeling dependencies is with rules or decisions, which are are checked when a decision is taken.\cite{b11} \\
+
+The second approach could be more intuitive for most people with a software engineering background because of the similarity how a computer program with conditional statements works.
 
 \section{Variability patterns}
 Variability can be introduced into a system via different mechanisms. These mechanisms strive to bind a given system to one out of many alternatives at different binding times. Binding times describe when exactly these mechanisms stop deffering the decision and make the choice for any of the variations, as illustrated in Figure 2.\cite{b2}
@@ -142,27 +152,29 @@ In this document we have given a short introduction to the origin of variability
 This information is vital for being able to manage variability, it does however, only glance over the different subjects and merely provides a theoretical basis. Practical use also depends on supporting software, which widely exists especially for the task of variability modelling, as well as practical knowledge in the field, which also aids in gaining an in depth understanding of managing variability.\\
 
 For further information we refer the reader to the references, especially \cite{b2}, which gives a more in depth overview, and \cite{b6}, which compares different approaches to variability modelling.
-\newpage
 
 \begin{thebibliography}{00}
 \bibitem{b1} S. Apel, D. Batory, C. Kästner and G. Saake, "Software Product Lines. In: Feature-Oriented Software Product Lines", Berlin Heidelberg, Springer (2013)
-\bibitem{b2} J. van Gurp, J. Bosch and M. Svahnberg, "On the notion of variability in software product lines," Proceedings Working IEEE/IFIP Conference on Software Architecture", Amsterdam, Netherlands, 2001, pp. 45-54
+\bibitem{b2} J. van Gurp, J. Bosch and M. Svahnberg, "On the notion of variability in software product lines," Proceedings Working IEEE/IFIP Conference on Software Architecture", Amsterdam, Netherlands, 2001
 \bibitem{b3} F. Bachmann, L. Bass, "Managing Variability in Software Architectures", Carnegie Mellon University (2001)
 \bibitem{b4} M. Galster, D. Weyns, D. Tofan, M. Bartosz, P. Avgeriou, "Variability in Software Systems—A Systematic Literature Review", IEEE Transactions on Software Engineering (2014)
-\bibitem{b5} T. Berger, J.-P. Steghöfer, T. Ziadi, J. Robin, and J. Martinez, "The state of adoption and the challenges of systematic variability management in industry", Empirical Software Engineering, vol. 25, pp. 1755-1797, 2020
+\bibitem{b5} T. Berger, J.-P. Steghöfer, T. Ziadi, J. Robin, and J. Martinez, "The state of adoption and the challenges of systematic variability management in industry", Empirical Software Engineering, vol. 25, 2020
 \bibitem{b6}
 K. Czarnecki, P. Grünbacher, R. Rabiser, K. Schmid., and A.
 Wasowski, “Cool features and tough decisions: a comparison of
-variability modeling approaches,” Proc. of the \textit{Sixth international
+variability modeling approaches”, Proc. of the \textit{Sixth international
 workshop on variability modeling of software-intensive systems
-(VaMoS '12)}, ACM, Jan 2012, pp. 173-182.
+(VaMoS '12)}, ACM, Jan 2012
 \bibitem{b7}
 Software Productivity Consortium Services Corporation,
 Technical Report SPC-92019-CMC. \textit{Reuse-Driven Software
 Processes Guidebook}, Version 02.00.03, 1993.
 \bibitem{b8} K. C. Kang, S. Cohen, J. Hess, W. Novak, and S. Peterson,	 "Feature oriented domain analysis (FODA) feasibility study", Technical Report CMU/SEI-90-TR-21, Software Engineering Institute, Carnegie Mellon University, Pittburgh, PA, USA, 1990
 \bibitem{b9} A. Metzger, and K. Pohl, "Software product line engineering and variability management: Achievements and challenges," \textit{Proc. of the Future of Software Engineering (FOSE 2014)}, ACM, 2014, pp. 70-84, doi:10.1145/2593882.2593888.
-\bibitem{b10} M. Riebisch, K. Böllert, D. Streitferdt, and I. Philippow, "Extending Feature Diagrams with UML Multiplicities", \textit{6th World Conference on Integrated Design \& Process Technology (IDPT2002)}, vol. 23, 2002, pp. 1-7.
+\bibitem{b10} M. Riebisch, K. Böllert, D. Streitferdt, and I. Philippow, "Extending Feature Diagrams with UML Multiplicities", \textit{6th World Conference on Integrated Design \& Process Technology (IDPT2002)}, vol. 23, 2002
+\bibitem{b11} K. Schmid, R. Rabiser, P. Grünbacher, "A comparison of decision modeling approaches in product lines", Proc. of the \textit{Fifth international
+workshop on variability modeling of software-intensive systems
+(VaMoS '11)}, ACM, Jan 2011
 \end{thebibliography}
 
 \end{document}

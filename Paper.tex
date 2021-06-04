@@ -75,7 +75,7 @@ Features in the context of feature modeling are behaviours, characteristics or f
 
 A big advantage of feature models, especially in the shape of feature diagrams, is a possible communication enhancement between stakeholders. This can be achieved by providing an overview of all functionalities which are offered to the user by the system. Due to the nature of the structure of the model and due to the fact that it displays if and which planned features are already provided by another system or system family, this may improve the cost and time estimation for developing the software system. \\
 
-The essence of feature modeling is the splitting of features into distinct objects which have a certain relation to each other. There are several types of features mentioned in \cite{b8}, named \textit{mandatory, optional and alternative features}. Generally speaking common attributes of systems are described by mandatory features, while alternative or optional features define the variability in feature models.\cite{b9}\\
+The essence of feature modeling is the splitting of features into distinct objects which have a certain relation to each other. There are several types of features mentioned in \cite{b8}, named \textit{mandatory, optional and alternative features}. Generally speaking common attributes of systems are described by mandatory features, while alternative or optional features define the variability in feature models. Additionally so called cross tree constraints can be defined to model, for example mutual exclusive features across the whole tree structure.\cite{b9}\\
 
 If a feature is mandatory it has to be selected if its parent feature is selected, the type of the parent feature does not matter. An optional feature can be selected freely but there may be constraints from composition rules (e.g. a feature can only be choosen as part of a feature sets). Alternative features are can be pictured as a choice box, exactly \textit{one} item must be chosen from a feature set.\\
 
@@ -103,8 +103,15 @@ Some of them use contraints, similar to the approach used in feature modeling. A
 
 The second approach could be more intuitive for most people with a software engineering background because of the similarity how a computer program with conditional statements works.
 
+\begin{figure}[h!]
+	\includegraphics[width=\columnwidth]{decision_model}
+	\caption{Simplified decision model of a car}
+\end{figure}
+Fig. 2 uses the same model as Fig. 1 but this time with the decision modeling approach was used. As described previously the decision model does not contain information about the commonalities in the system.\\
+
+
 \section{Variability patterns}
-Variability can be introduced into a system via different mechanisms. These mechanisms strive to bind a given system to one out of many alternatives at different binding times. Binding times describe when exactly these mechanisms stop deffering the decision and make the choice for any of the variations, as illustrated in Figure 2.\cite{b2}
+Variability can be introduced into a system via different mechanisms. These mechanisms strive to bind a given system to one out of many alternatives at different binding times. Binding times describe when exactly these mechanisms stop deffering the decision and make the choice for any of the variations, as illustrated in Figure 3.\cite{b2}
 
 \begin{figure}[h!]
 	\includegraphics[width=\columnwidth]{binding_times}
@@ -122,8 +129,8 @@ Further explanation of these binding times can be found in the subsequent paragr
 \end{itemize}
 Any mechanism to bind to none, one or many different variants tend to fall into different categories presented by \cite{b2} and \cite{b3}, and also have parallels to the feature types presented in the previous section:\\
 \begin{itemize}
-	\item \textit{Variant Entity.} There exist several options but only one may be bound to at any given time.\\
-	\item \textit{Optional Entity.} An optional entity may or may not be included in the system.\\
+	\item \textit{Variant Entity.} There exist several options but only one may be bound to at any given time.
+	\item \textit{Optional Entity.} An optional entity may or may not be included in the system.
 	\item \textit{Multiple Coexisting Entities.} Similar to the variant entity but with the exception that multiple variants can be used.\\
 \end{itemize}
 These categories tend to be the same for the different binding times, but of course vary greatly in their implementation. While an optional entity during compilation may only be influenced by a compiler flag, it might be a whole plugin from a third party vendor when adapting a given runtime environment. An in depth analysis of these mechanisms can be found in \cite{b2}.
